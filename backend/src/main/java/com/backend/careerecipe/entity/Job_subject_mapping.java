@@ -11,17 +11,17 @@ import lombok.*;
 public class Job_subject_mapping {
 
     @EmbeddedId
-    private Job_subject_mapping_id job_subject_mapping_id; //복합키 타입이므로 String이 아닌 복합키 타입으로 선언
+    private Job_subject_mapping_id job_subject_mapping_id;
 
     @ManyToOne
-    @MapsId("job_id")
+    @MapsId("job_id")  // 복합키 안의 job_id 필드에 대응
     @JoinColumn(name = "job_id", nullable = false)
     private Job job;
 
     @ManyToOne
     @JoinColumns({
-            @JoinColumn(name = "subject_id", referencedColumnName = "subject_id", nullable = false),
-            @JoinColumn(name = "department", referencedColumnName = "department", nullable = false)
+            @JoinColumn(name = "subject_id", referencedColumnName = "subject_id", nullable = false, insertable = false, updatable = false),
+            @JoinColumn(name = "department", referencedColumnName = "department", nullable = false, insertable = false, updatable = false)
     })
     private Subject subject;
 

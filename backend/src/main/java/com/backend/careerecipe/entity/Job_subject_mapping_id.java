@@ -1,7 +1,11 @@
 package com.backend.careerecipe.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 @Embeddable
@@ -10,12 +14,12 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class Job_subject_mapping_id implements Serializable {
 
-    @Column(name = "job_id", length = 10, nullable = false)
+    @Column(name = "job_id", nullable = false, length = 10)
     private String job_id;
 
-    @Column(name = "subject_id", length = 10, nullable = false)
+    @Column(name = "subject_id", nullable = false, length = 10)
     private String subject_id;
 
-    @Column(name = "department", length = 100, nullable = false)
+    @Column(name = "department", nullable = false, length = 100)
     private String department;
 }
