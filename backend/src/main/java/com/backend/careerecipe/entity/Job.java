@@ -16,4 +16,7 @@ public class Job {
 
     @Column(name = "job_name", length = 100, nullable = false)
     private String job_name;
+
+    @Column(name = "roadmap_url")
+    private String roadmap_url;
 }
