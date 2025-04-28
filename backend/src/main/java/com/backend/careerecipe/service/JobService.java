@@ -24,4 +24,3 @@ public class JobService {
         return new RoadMapResponseDto(job.getJob_id(), job.getRoadmap_url());
     }
 }
-    
