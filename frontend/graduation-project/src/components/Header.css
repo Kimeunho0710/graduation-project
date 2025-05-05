@@ -2,9 +2,11 @@
 .Header {
   position: fixed; /* 화면에 고정 */
   top: 0; /* 화면 최상단에 위치 */
-  width: 100%; /* 가로 전체 꽉 채움 */
+  width: 500px;
+  left: 50%;  /* 화면 중앙에 위치 */
+  transform: translateX(-50%); /* 화면 중앙에 위치 */
   height: 60px; /* 헤더 높이 60px */
-  background-color: #f9f9f9; /* 배경색 밝은 회색 */
+  background-color: #ffffff; /* 배경색 흰색 */
   display: flex; /* Flexbox 사용 */
   align-items: center; /* 수직 중앙 정렬 */
   justify-content: space-between; /* 좌측 - 가운데 - 우측 요소를 양끝 + 중앙 배치 */
@@ -38,7 +40,7 @@
 
 /* ===== 헤더 안의 타이틀 글자 스타일 ===== */
 .Header-title {
-  font-size: 18px; /* 글자 크기 */
+  font-size: 22px; /* 글자 크기 */
   font-weight: bold; /* 굵게 */
   color: #333; /* 어두운 회색 글자 */
 }
@@ -47,4 +49,19 @@
 .Header-icon {
   width: 30px;
   height: 30px;
+}
+
+/* Home 전용 스타일 고려 */
+.HomePage {
+  padding-top: 70px; /* 헤더 높이만큼 위 여백 확보 */
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .Header {
+    width: 100%; /* 모바일 화면에서 꽉 채우기 */
+    left: 0; /* 왼쪽 정렬 */
+    transform: none; /* 중앙 정렬 트랜스폼 제거 */
+    padding: 0 16px; /* 좌우 여백은 조금만 */
+  }
 }

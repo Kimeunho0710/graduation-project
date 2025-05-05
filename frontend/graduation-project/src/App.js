@@ -1,11 +1,17 @@
 // 리액트 기본 import
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 
 // 페이지 컴포넌트 import
-import Home from './pages/Home';         // 메인(로그인) 화면
+import Home from './pages/Home'; // 메인(로그인) 화면
 import JobSelectPage from './pages/JobSelectPage'; // 직업 선택 화면
-import MyPage from './pages/MyPage';      // 마이페이지 화면
-import Header from './components/Header'; // 상단 헤더 컴포넌트 
+import JobDetailPage from './pages/JobDetailPage'; // 직업 상세 화면
+import MyPage from './pages/MyPage'; // 마이페이지 화면
+import Header from './components/Header'; // 상단 헤더 컴포넌트
 
 import './App.css'; // 전체 앱 스타일 가져오기
 
@@ -19,15 +25,37 @@ function AppContent() {
     <>
       {/* 홈 화면이 아닐 경우에만 Header 보이게 */}
       {!hideHeaderPaths.includes(location.pathname) && <Header />}
-      
+
       {/* 각 Route별로 화면 표시 */}
       <Routes>
         {/* 홈화면은 패딩 없음 */}
         <Route path="/" element={<Home />} />
 
         {/* 그 외 화면은 상단바 높이만큼 패딩 줌 */}
-        <Route path="/select-job" element={<div style={{ paddingTop: '70px' }}><JobSelectPage /></div>} />
-        <Route path="/mypage" element={<div style={{ paddingTop: '70px' }}><MyPage /></div>} />
+        <Route
+          path="/select-job"
+          element={
+            <div style={{ paddingTop: '70px' }}>
+              <JobSelectPage />
+            </div>
+          }
+        />
+        <Route
+          path="/job-detail"
+          element={
+            <div style={{ paddingTop: '70px' }}>
+              <JobDetailPage />
+            </div>
+          }
+        />
+        <Route
+          path="/mypage"
+          element={
+            <div style={{ paddingTop: '70px' }}>
+              <MyPage />
+            </div>
+          }
+        />
       </Routes>
     </>
   );

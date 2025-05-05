@@ -5,6 +5,14 @@ body {
   background-color: #ffffff;
 }
 
+.Container {
+  max-width: 500px;     /* 콘텐츠 최대 너비 */
+  margin: 0 auto;        /* 화면 가운데 정렬 */
+  padding: 20px;       /* 좌우 여백 */
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .App {
   text-align: center; /* 안쪽 모든 요소를 중앙 정렬 */
   padding: 50px; /* 전체 패딩 50px */
@@ -54,22 +62,22 @@ a {
 /* 폰 화면 사이즈 */
 @media (max-width: 600px) {
   .App-logo {
-    width: 200px; /* 화면 좁으면 로고 작게 */
+    width: 240px; /* 더 크고 눈에 잘 띄게 */
   }
 
   .App-description {
-    font-size: 16px; /* 설명 글자 줄이기 */
-    line-height: 1.6; /* 줄 간격도 좁게 */
+    font-size: 18px;
+    line-height: 1.8;
   }
 
   .Suwon-login-button {
-    font-size: 16px; /* 버튼 글자 크기 살짝 줄이기 */
-    padding: 12px 20px; /* 버튼 패딩도 줄이기 */
+    font-size: 18px;
+    padding: 14px 24px;
   }
 
   .Suwon-logo {
-    width: 20px; /* 로고 이미지도 작게 */
-    margin-right: 8px;
+    width: 24px;
+    margin-right: 10px;
   }
 }
 
@@ -144,15 +152,21 @@ a {
   color: #999;
 }
 
+
 /* JobSelectPage*/
 .JobSelectPage {
+  max-width: 500px; /* 콘텐츠 최대 너비 */
+  margin: 0 auto; /* 화면 가운데 정렬 */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 20px 20px;
 }
 
 .JobSelect-top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
   margin-bottom: 20px;
 }
 
@@ -160,6 +174,7 @@ a {
   background-color: #8790CB;
   color: white;
   border: none;
+  justify-self: start;
   padding: 8px 16px;
   border-radius: 15px;
   font-size: 16px;
@@ -170,7 +185,7 @@ a {
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  max-width: 400px;
+  padding: 0 16px;
 }
 
 .JobSelect-button {
@@ -181,9 +196,37 @@ a {
   font-size: 18px;
   cursor: pointer;
   text-align: center;
+  width: 100%;
 }
 
 .JobSelect-button:hover {
   background-color: #BFC0CF;
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .JobSelectPage {
+    padding: 10px;
+  }
+
+  .JobSelect-top {
+    margin-bottom: 16px;
+    margin-left: 160px;
+  }
+
+  .JobSelect-category {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .JobSelect-list {
+    gap: 10px;
+    padding: 0 80px;
+    box-sizing: border-box;
+  }
+
+  .JobSelect-button {
+    font-size: 15px;
+    padding: 12px;
+  }
 }
