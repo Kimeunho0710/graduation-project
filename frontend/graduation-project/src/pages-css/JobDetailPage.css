@@ -21,7 +21,7 @@
   
   /* 버튼 스타일 */
   .JobDetailButton {
-    background-color: #a1a5de;
+    background-color: #8791CB;
     color: white;
     font-size: 18px;
     padding: 15px 25px;
@@ -33,6 +33,6 @@
   }
   
   .JobDetailButton.dark {
-    background-color: #3c3f7f;
+    background-color: #3F4279;
     font-weight: bold;
   }
