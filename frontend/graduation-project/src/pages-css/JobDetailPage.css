@@ -1,0 +1,38 @@
+.JobDetailPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px 20px;
+  gap: 16px;
+}
+
+/* 선택된 직업명 박스 (길이 자동 조정) */
+.SelectedJob {
+  background-color: #eaeaea;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  display: inline-block;
+  max-width: 90%;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* 버튼 스타일 */
+.JobDetailButton {
+  background-color: #a1a5de;
+  color: white;
+  font-size: 18px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.JobDetailButton.dark {
+  background-color: #3c3f7f;
+  font-weight: bold;
+}
