@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // 페이지 이동을 위한 훅
 
 function JobSelectPage() {
-  const navigate = useNavigate(); // 페이지 이동 기능
-  const [selectedJob, setSelectedJob] = useState(""); // 현재 선택된 직업 상태
+  const navigate = useNavigate(); // 이동 기능 생성
+  const [selectedJob, setSelectedJob] = useState(""); // 현재 선택된 직업 상태 저장
 
-  // 직업 목록 배열
+  // 직업 리스트 배열
   const jobList = [
     "백엔드 개발자",
     "프론트엔드 개발자",
@@ -22,26 +22,26 @@ function JobSelectPage() {
     "빅데이터 엔지니어",
   ];
 
-  // 직업 버튼 클릭 시 실행될 함수
+  // 직업 버튼 클릭 시 실행되는 함수
   const handleJobClick = (job) => {
-    setSelectedJob(job); // 클릭한 직업을 선택 상태로 변경
-    //navigate("/job-info", { state: { job } }); 
-    // '/job-info' 페이지로 이동하면서, 선택한 직업 정보를 state로 넘겨줌
+    setSelectedJob(job); // 클릭한 직업을 선택된 직업으로 저장
+    // navigate("/job-info", { state: { job } }); // <- 지금은 이동 막아둠
   };
 
   return (
     <div className="JobSelectPage">
-      {/* 상단 타이틀 */}
-      <div className="JobSelect-title">직업 목록</div>
+      {/* 상단 "직업 목록" 버튼 */}
+      <div className="JobSelect-top">
+        <button className="JobSelect-category">직업 목록</button>
+      </div>
 
       {/* 직업 리스트 버튼들 */}
       <div className="JobSelect-list">
         {jobList.map((job, index) => (
           <button
-            key={index} // React의 key 설정 (반복문에서 필수)
-            className={`JobSelect-button ${selectedJob === job ? "selected" : ""}`}
-            // 선택된 직업은 버튼에 "selected" 클래스를 추가로 줌
-            onClick={() => handleJobClick(job)} // 클릭 시 직업 선택 + 페이지 이동
+            key={index} // React에서 반복문 쓸 때 key 필수
+            className={`JobSelect-button ${selectedJob === job ? "selected" : ""}`} // 선택된 직업은 스타일 다르게
+            onClick={() => handleJobClick(job)} // 클릭하면 직업 선택
           >
             {job}
           </button>
@@ -51,4 +51,4 @@ function JobSelectPage() {
   );
 }
 
-export default JobSelectPage; // 이 컴포넌트를 외부에서도 사용할 수 있게 export
+export default JobSelectPage; // 컴포넌트 내보내기
