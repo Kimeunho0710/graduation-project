@@ -10,6 +10,7 @@ import {
 import Home from './pages/Home'; // 메인(로그인) 화면
 import JobSelectPage from './pages/JobSelectPage'; // 직업 선택 화면
 import JobDetailPage from './pages/JobDetailPage'; // 직업 상세 화면
+import MajorSelectPage from './pages/MajorSelectPage';
 import MyPage from './pages/MyPage'; // 마이페이지 화면
 import Header from './components/Header'; // 상단 헤더 컴포넌트
 
@@ -47,6 +48,14 @@ function AppContent() {
               <JobDetailPage />
             </div>
           }
+        />
+        <Route 
+          path="/major-select" 
+          element={
+            <div style={{ paddingTop: '70px' }}>
+              <MajorSelectPage />
+            </div>
+          } 
         />
         <Route
           path="/mypage"

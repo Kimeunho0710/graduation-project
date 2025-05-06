@@ -1,0 +1,81 @@
+.MajorSelectPage {
+  max-width: 500px; /* 콘텐츠 최대 너비 */
+  margin: 0 auto; /* 화면 가운데 정렬 */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Jua', sans-serif;
+}
+  
+.FilterBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+ 
+.FilterButton {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  background-color: #8790CB;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+}
+  
+.SubjectList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+}
+  
+.SubjectItem {
+  background-color: #EAEBF3;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.SubjectInfo {
+  font-size: 16px;
+}
+  
+.StarImage {
+  width: 20px;
+  height: 20px;
+}
+
+/* 폰 화면 사이즈 */
+@media (max-width: 600px) {
+  .MajorSelectPage {
+    padding: 10px;
+  }
+
+  .FilterButton {
+    font-size: 14px;
+    padding: 8px;
+    margin: 0 3px;
+  }
+
+  .SubjectItem {
+    padding: 12px;
+  }
+
+  .SubjectInfo {
+    font-size: 14px;
+  }
+
+  .StarImage {
+    width: 18px;
+    height: 18px;
+  }
+}

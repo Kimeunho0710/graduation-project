@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Jua', sans-serif;
 }
   
 .JobDetail-top {
@@ -60,8 +61,7 @@
   }
 
   .JobDetail-top {
-   margin-bottom: 16px;
-    margin-left: 160px;
+    margin-bottom: 16px;
   }
 
   .SelectedJob {
@@ -71,8 +71,6 @@
 
   .ButtonList {
     gap: 25px;
-    padding: 0 80px;
-    box-sizing: border-box;
   }
 
   .JobDetailButton {
