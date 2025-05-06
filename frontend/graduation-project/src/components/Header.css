@@ -2,7 +2,8 @@
 .Header {
   position: fixed; /* 화면에 고정 */
   top: 0; /* 화면 최상단에 위치 */
-  width: 500px;
+  width: 100%;
+  max-width: 500px; 
   left: 50%;  /* 화면 중앙에 위치 */
   transform: translateX(-50%); /* 화면 중앙에 위치 */
   height: 60px; /* 헤더 높이 60px */
@@ -59,9 +60,26 @@
 
 @media (max-width: 600px) {
   .Header {
-    width: 100%; /* 모바일 화면에서 꽉 채우기 */
-    left: 0; /* 왼쪽 정렬 */
-    transform: none; /* 중앙 정렬 트랜스폼 제거 */
+    max-width: 100%;
     padding: 0 16px; /* 좌우 여백은 조금만 */
+  }
+
+  .Header-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .Header-title {
+    font-size: 18px; /* 기존보다 작게 */
+  }
+
+  .Header-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .Header-left, .Header-right {
+    width: 40px;
+    height: 40px;
   }
 }
