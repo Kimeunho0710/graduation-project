@@ -29,6 +29,10 @@ body {
   line-height: 2; /* 줄 간격 2배 */
 }
 
+.App-description .checkIcon {
+  color: red;
+}
+
 a {
   text-decoration: none; /* 링크 밑줄 제거 */
   display: inline-block; /* 링크 -> 인라인 블록으로 설정 : 중앙 정렬 */

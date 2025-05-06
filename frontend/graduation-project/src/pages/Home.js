@@ -17,10 +17,10 @@ function Home() {
 
         {/* 설명 텍스트 (줄바꿈 포함) */}
         <p className="App-description">
-          자신이 원하는 직업에 대한<br/>
-          로드맵 제공<br/>
-          필요한 자격증 추천<br/>
-          전공 선택 과목 추천
+          <span>자신이 원하는 직업에 대한</span><br/>
+          <span className="checkIcon">✔ </span><span>로드맵 제공</span><br/>
+          <span className="checkIcon">✔ </span><span>필요한 자격증 추천</span><br/>
+          <span className="checkIcon">✔ </span><span>전공 선택 과목 추천</span>
         </p>
 
         {/* 로그인 버튼 */}
