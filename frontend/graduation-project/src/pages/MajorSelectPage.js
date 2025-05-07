@@ -12,7 +12,8 @@ function MajorSelectPage() {
 
   useEffect(() => {
     if (jobId) {
-      axios.get(`/api/jobs/${jobId}/subjects`)
+      axios
+        .get(`/api/jobs/${jobId}/subjects`)
         .then((res) => setSubjects(res.data))
         .catch((err) => console.error('전공 과목 추천 조회 실패:', err));
     }
@@ -40,20 +41,22 @@ function MajorSelectPage() {
       </div>
 
       <div className="SubjectList">
-        {(subjects.length > 0 ? subjects : [null, null, null]).map((subject, index) => (
-          <div className="SubjectItem" key={index}>
-            <div className="SubjectInfo">
-              {subject ? subject.subjectName : ''}
+        {(subjects.length > 0 ? subjects : [null, null, null]).map(
+          (subject, index) => (
+            <div className="SubjectItem" key={index}>
+              <div className="SubjectInfo">
+                {subject ? subject.subjectName : ''}
+              </div>
+              <div className="Star" onClick={() => toggleFavorite(index)}>
+                <img
+                  src={favorites[index] ? '/star_full.png' : '/star.png'}
+                  alt="즐겨찾기"
+                  className="StarImage"
+                />
+              </div>
             </div>
-            <div className="Star" onClick={() => toggleFavorite(index)}>
-              <img
-                src={favorites[index] ? '/star_full.png' : '/star.png'}
-                alt="즐겨찾기"
-                className="StarImage"
-              />
-            </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </div>
   );
