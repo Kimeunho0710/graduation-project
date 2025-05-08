@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+.LicenseRecommendPage {
+  font-family: 'Jua', sans-serif;
+  min-height: 100vh;
+  max-height: calc(100vh - 70px); /* 헤더 높이 제외 */
+  padding: 80px 20px 20px;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto; /* 스크롤 가능 */
+}
+
+.LicenseCard {
+  background-color: #eceef5;
+  border-radius: 15px;
+  padding: 16px;
+  font-size: 16px;
+  color: #333;
+}

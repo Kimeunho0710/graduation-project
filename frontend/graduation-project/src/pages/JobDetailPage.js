@@ -12,7 +12,13 @@ function JobDetailPage() {
       state: { jobId: selectedJob.jobId },
     });
   };
-  
+
+  const handleLicenseClick = () => {
+    navigate('/license-recommend', {
+      state: { jobId: selectedJob.jobId },
+    });
+  };
+
   return (
     <div className="JobDetailPage">
       <div className="JobDetail-top">
@@ -25,7 +31,9 @@ function JobDetailPage() {
           전공(선택) 추천
         </button>
         <button className="JobDetailButton">로드맵</button>
-        <button className="JobDetailButton">자격증 추천</button>
+        <button className="JobDetailButton" onClick={handleLicenseClick}>
+          자격증 추천{' '}
+        </button>
         <button className="JobDetailButton">직업 상세 설명</button>
       </div>
     </div>
