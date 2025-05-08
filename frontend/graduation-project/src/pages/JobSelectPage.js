@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // 페이지 이동을 위한 훅
+import '../pages-css/JobSelectPage.css';
 
 function JobSelectPage() {
   const navigate = useNavigate(); // 이동 기능 생성

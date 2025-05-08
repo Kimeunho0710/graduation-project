@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'; // 리액트 훅 import
+import '../pages-css/MyPage.css';
 
 function MyPage() {
   const [favorites, setFavorites] = useState([]); 
