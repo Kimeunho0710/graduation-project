@@ -10,12 +10,12 @@ import java.util.List;
 
 public interface Job_subject_mappingRepository extends JpaRepository<Job_subject_mapping, Job_subject_mapping_id> {
     @Query("SELECT jsm FROM Job_subject_mapping jsm " +
-            "WHERE jsm.job.job_id = :job_id " +
-            "AND jsm.subject.id.department = :department " +
+            "WHERE jsm.job.jobId = :job_id " +
+            "AND jsm.subject.subject_id.department = :department " +
             "AND jsm.subject.grade = :grade " +
             "AND jsm.subject.semester.semester_id = :semester_id")
     List<Job_subject_mapping> findRecommendedSubjects(
-            @Param("job_id") String jobId,
+            @Param("jobId") String jobId,
             @Param("department") String department,
             @Param("grade") Integer grade,
             @Param("semester_id") Integer semesterId
