@@ -12,12 +12,23 @@ function MajorSelectPage() {
 
   useEffect(() => {
     if (jobId) {
+      const department = '컴퓨터sw';
+      const grade = 2;
+      const semesterId = 2;
+
       axios
-        .get(`/api/jobs/${jobId}/subjects`)
+        .get(`/api/jobs/${jobId}/subjects`, {
+          params: {
+            department: department,
+            grade: grade,
+            semester_id: semesterId
+          }
+        })
         .then((res) => setSubjects(res.data))
         .catch((err) => console.error('전공 과목 추천 조회 실패:', err));
     }
   }, [jobId]);
+
 
   const toggleFavorite = (index) => {
     setFavorites((prev) => ({ ...prev, [index]: !prev[index] }));

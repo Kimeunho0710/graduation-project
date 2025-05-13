@@ -26,7 +26,7 @@ function JobSelectPage() {
   // 직업 버튼 클릭 시 실행되는 함수
   const handleJobClick = (job) => {
     setSelectedJob(job); // 클릭한 직업을 선택된 직업으로 저장
-    navigate('/job-detail', { state: { job } }); // <- 지금은 이동 막아둠
+    navigate('/job-detail', { state: { job } });
   };
 
   return (
