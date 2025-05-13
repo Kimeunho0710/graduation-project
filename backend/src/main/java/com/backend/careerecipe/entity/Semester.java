@@ -13,5 +13,6 @@ public class Semester {
     @Column(name = "semester_id")
     private Integer semester_id;
 
+    @Column(name = "semester_name")
     private String name;
 }

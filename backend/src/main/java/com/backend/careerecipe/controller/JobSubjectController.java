@@ -16,7 +16,7 @@ public class JobSubjectController {
 
     @GetMapping("/{job_id}/subjects")
     public List<SubjectResponseDto> getRecommendedSubjects(
-            @PathVariable String job_id,
+            @PathVariable("job_id") String job_id,
             @RequestParam String department,
             @RequestParam int grade,
             @RequestParam int semester_id

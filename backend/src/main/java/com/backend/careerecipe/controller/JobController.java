@@ -27,7 +27,7 @@ public class JobController {
         return ResponseEntity.ok(jobService.getRoadmap(job_id));
     }
 
-    @GetMapping("/{jobId}/detail")
+    @GetMapping("/{job_id}/detail")
     public ResponseEntity<JobDetailResponseDto> getJobDetail(@PathVariable String jobId) {
         return ResponseEntity.ok(jobService.getJobDetail(jobId));
     }
