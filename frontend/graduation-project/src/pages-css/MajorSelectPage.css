@@ -7,27 +7,70 @@
   align-items: center;
   font-family: 'Jua', sans-serif;
 }
-  
+
 .FilterBar {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
   margin-bottom: 20px;
+  padding: 0 20px;
 }
- 
+
+.FilterDropdown {
+  flex: 1;
+  position: relative;
+}
+
 .FilterButton {
   display: flex;
-  justify-content: space-between;
-  flex: 1;
-  margin: 0 5px;
+  width: 100%;
   padding: 10px;
-  background-color: #8790CB;
+  font-family: 'Jua', sans-serif;
+  background-color: #8790cb;
   color: white;
   border: none;
   border-radius: 12px;
   font-size: 16px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
-  
+
+.FilterButton:hover {
+  background-color: #3f4279;
+}
+
+.FilterButton:active {
+  background-color: #3f4279;
+  transform: scale(0.97);
+}
+
+.Dropdown {
+  position: absolute;
+  top: 110%; /* 버튼 아래에 위치 */
+  left: 0;
+  background-color: #8790cb;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 160px;
+  padding: 8px 0;
+}
+
+.DropdownItem {
+  font-family: 'Jua', sans-serif;
+  padding: 10px 16px;
+  cursor: pointer;
+  color: white;
+}
+
+.DropdownItem:hover {
+  background-color: #3f4279;
+}
+
 .SubjectList {
   width: 100%;
   display: flex;
@@ -35,20 +78,20 @@
   flex-direction: column;
   gap: 12px;
 }
-  
+
 .SubjectItem {
-  background-color: #EAEBF3;
+  background-color: #eaebf3;
   border-radius: 12px;
   padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-  
+
 .SubjectInfo {
   font-size: 16px;
 }
-  
+
 .StarImage {
   width: 20px;
   height: 20px;
