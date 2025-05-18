@@ -24,10 +24,10 @@ function Home() {
         </p>
 
         {/* 로그인 버튼 */}
-        <button className="Suwon-login-button" onClick={handleLogin}>
-          {/* 버튼 안에 수원대 로고 이미지 */}
-          <img src="suwon-logo.png" alt="수원대 로고" className="Suwon-logo" />
-          <span>수원대학교 포털 아이디로 시작하기</span>
+        <button className="kakaotalk-login-button" onClick={handleLogin}>
+          {/* 버튼 안에 카카오톡 로고 이미지 */}
+          <img src="kakaotalk-logo.png" alt="카카오톡 로고" className="kakaotalk-logo" />
+          <span>카카오톡 아이디로 시작하기</span>
         </button>
       </div>
     </div>
