@@ -162,7 +162,7 @@
 본 프로젝트는 프론트엔드 1명, 백엔드 1명으로 구성되며, 각 팀원의 역할은 다음과 같다.
 
 ####  **백엔드 개발자 (Backend Developer)**
-- **기술 스택:** Java(Spring Boot) 또는 Node.js(Express) + MySQL/MSSQL  
+- **기술 스택:** Java(Spring Boot) + MySQL 
 - 전공 선택 과목 및 직업 데이터베이스 설계 및 구축  
 - 직업-과목 매칭 알고리즘 개발 (규칙 기반 추천 시스템)  
 - RESTful API 개발 및 프론트엔드와 연동  
