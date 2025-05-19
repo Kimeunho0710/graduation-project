@@ -1,3 +1,6 @@
-"frontend/node_modules/" 
-"frontend/.vscode/" 
-"frontend/dist/" 
+
+frontend/node_modules/
+frontend/.vscode/
+frontend/public/
+frontend/src/
+frontend/package.json
