@@ -5,11 +5,11 @@ import com.backend.careerecipe.dto.KakaoUserInfo;
 import com.backend.careerecipe.entity.User;
 import com.backend.careerecipe.repository.UserRepository;
 import com.backend.careerecipe.service.KakaoOAuthService;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,11 +21,14 @@ public class KakaoOAuthController {
     private final UserRepository userRepository;
 
     @GetMapping("/kakao")
-    public ResponseEntity<?> kakaoLogin(@RequestParam String code) {
+    public void kakaoLogin(@RequestParam String code, HttpServletResponse response) throws IOException {
+        // 1. 인가코드로 카카오에서 액세스 토큰 발급
         String accessToken = kakaoOAuthService.getAccessToken(code);
+
+        // 2. 토큰으로 사용자 정보 조회
         KakaoUserInfo userInfo = kakaoOAuthService.getUserInfo(accessToken);
 
-        // DB에 존재하지 않으면 새로 저장
+        // 3. DB에 사용자 정보 없으면 새로 저장
         userRepository.findByKakaoId(userInfo.getId())
                 .orElseGet(() -> {
                     User newUser = new User();
@@ -34,13 +37,10 @@ public class KakaoOAuthController {
                     return userRepository.save(newUser);
                 });
 
-        // JWT 발급
+        // 4. JWT 발급
         String jwt = jwtProvider.createToken(userInfo.getId());
 
-        // 토큰 + 유저 정보 반환
-        return ResponseEntity.ok(Map.of(
-                "token", jwt,
-                "user", userInfo
-        ));
+        // 5. 프론트엔드로 리다이렉트 + 토큰 전달
+        response.sendRedirect("http://localhost:3000/login/success?token=" + jwt);
     }
 }
