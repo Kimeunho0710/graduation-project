@@ -5,7 +5,8 @@ import lombok.*;
 
 @Entity
 @Table(name = "favorite")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Favorite {
@@ -14,14 +15,14 @@ public class Favorite {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumns({
-            @JoinColumn(name = "subject_id", referencedColumnName = "subject_id"),
-            @JoinColumn(name = "department", referencedColumnName = "department")
+            @JoinColumn(name = "subject_id", referencedColumnName = "subject_id", nullable = false),
+            @JoinColumn(name = "department", referencedColumnName = "department", nullable = false)
     })
     private Subject subject;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
 }
