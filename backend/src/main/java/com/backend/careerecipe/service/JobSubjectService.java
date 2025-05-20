@@ -26,7 +26,7 @@ public class JobSubjectService {
 
         return mappings.stream()
                 .map(jsm -> new SubjectResponseDto(
-                        jsm.getSubject().getSubject_id().getSubject_id(),
+                        jsm.getSubject().getSubject_id().getSubjectId(),
                         jsm.getSubject().getSubject_name(),
                         jsm.getSubject().getCredit()
                 ))
